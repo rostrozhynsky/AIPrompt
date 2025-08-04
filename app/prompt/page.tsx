@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button, HStack } from "@chakra-ui/react";
 
 export default function HomePage() {
   const [prompt, setPrompt] = useState("");
@@ -30,13 +31,13 @@ export default function HomePage() {
         className="w-full p-2 border rounded mb-4"
         placeholder="Enter your prompt"
       />
-      <button
+      <Button
         onClick={handleSend}
         disabled={loading}
         className="bg-blue-600 text-white px-4 py-2 rounded disabled:opacity-50"
       >
         {loading ? "Loading..." : "Send"}
-      </button>
+      </Button>
       {reply && (
         <div className="mt-4 p-4 bg-gray-100 rounded">
           <strong>Response:</strong>
